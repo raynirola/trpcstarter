@@ -1,0 +1,8 @@
+{
+  "name": "root",
+  "scripts": {
+    "dev": "pnpm run dev:server & pnpm run dev:website",
+    "dev:server": "pnpm run --filter server dev",
+    "dev:website": "pnpm run --filter website dev"
+  }
+}

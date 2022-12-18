@@ -1,0 +1,33 @@
+{
+  "name": "@packages/server",
+  "type": "module",
+  "main": "src/server.ts",
+  "scripts": {
+    "build": "swc src -d build",
+    "dev": "swc src -d build --watch & nodemon",
+    "start": "node --experimental-specifier-resolution=node build/server.js"
+  },
+  "dependencies": {
+    "@trpc/server": "^10.5.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "@swc/cli": "^0.1.57",
+    "@swc/core": "^1.2.249",
+    "@types/cors": "^2.8.13",
+    "@types/express": "^4.17.13",
+    "@types/morgan": "^1.9.3",
+    "@types/node": "^18.7.16",
+    "nodemon": "^2.0.19"
+  },
+  "nodemonConfig": {
+    "watch": [
+      "src",
+      ".env"
+    ],
+    "ext": "ts,js,json,.env",
+    "exec": "node --experimental-specifier-resolution=node build/server.js"
+  }
+}
