@@ -7,7 +7,9 @@ import { trpc } from "../lib/trpc";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  const { data } = trpc.health.useQuery();
+  const { data } = trpc.health.useQuery(undefined, {
+    initialData: { status: "loading" },
+  });
 
   return (
     <>
