@@ -6,7 +6,7 @@ import { trpc } from "../lib/trpc";
 
 const queryClient = new QueryClient({});
 const trpcClient = trpc.createClient({
-  links: [httpBatchLink({ url: "http://localhost:8080/trpc" })],
+  links: [httpBatchLink({ url: "http://localhost:8080/api/v1" })],
 });
 
 export default function App({ Component, pageProps }: AppProps) {
