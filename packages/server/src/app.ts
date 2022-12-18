@@ -5,8 +5,10 @@ import router, { createContext } from "@/trpc";
 import { createExpressMiddleware } from "@trpc/server/adapters/express";
 
 const app = express();
+
+app.disable("x-powered-by");
 app.use(morgan(":method :url :status"));
 app.use(cors({ origin: /http:\/\/localhost:\d+/ }));
-app.use("/trpc", createExpressMiddleware({ router, createContext }));
+app.use("/api/v1", createExpressMiddleware({ router, createContext }));
 
 export default app;
