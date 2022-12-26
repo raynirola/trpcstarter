@@ -3,6 +3,9 @@
   "scripts": {
     "dev": "pnpm run dev:server & pnpm run dev:website",
     "dev:server": "pnpm run --filter server dev",
-    "dev:website": "pnpm run --filter website dev"
+    "dev:website": "pnpm run --filter website dev",
+    "build": "pnpm run build:server & pnpm run build:website",
+    "build:server": "pnpm run --filter server build",
+    "build:website": "pnpm run --filter website build"
   }
 }
