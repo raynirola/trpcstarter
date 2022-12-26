@@ -15,6 +15,7 @@ console.log({ Origin: origin });
 app.disable("x-powered-by");
 app.use(morgan(":method :url :status"));
 app.use(cors({ origin: origin, credentials: true }));
+app.get("/", (_, res) => res.json({ status: "ok" }));
 app.use("/api/v1", createExpressMiddleware({ router, createContext }));
 
 export default app;
