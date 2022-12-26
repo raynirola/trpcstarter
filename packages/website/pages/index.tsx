@@ -11,6 +11,10 @@ export default function Home() {
     initialData: { status: "loading" },
   });
 
+  const statusStyle: React.CSSProperties = {
+    color: data?.status === "ok" ? "green" : "loading" ? "blue" : "red",
+  };
+
   return (
     <>
       <Head>
@@ -23,7 +27,9 @@ export default function Home() {
         <div className={styles.description}>
           <p>
             Server status:&nbsp;
-            <code className={styles.code}>{data?.status.toUpperCase()}</code>
+            <code className={styles.code} style={statusStyle}>
+              {data?.status.toUpperCase()}
+            </code>
           </p>
           <div>
             <a
